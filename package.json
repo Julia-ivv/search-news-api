@@ -1,0 +1,26 @@
+{
+  "name": "search-news-api",
+  "version": "0.0.1",
+  "description": "news search service",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julia-ivv/search-news-api.git"
+  },
+  "author": "Julia Ivanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julia-ivv/search-news-api/issues"
+  },
+  "homepage": "https://github.com/Julia-ivv/search-news-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
