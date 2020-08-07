@@ -1,6 +1,6 @@
 {
   "name": "search-news-api",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "news search service",
   "main": "app.js",
   "scripts": {
