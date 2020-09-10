@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors, celebrate, Joi } = require('celebrate');
+const cors = require('cors');
 const usersRouter = require('./routes/users');
 const articlesRouter = require('./routes/articles');
 const NotFoundError = require('./errors/not-found-error');
@@ -14,6 +15,19 @@ const { NODE_ENV, MONGO_DB, PORT = 3000 } = process.env;
 
 const app = express();
 
+const whitelist = ['http://localhost:8080', 'http://api.search-news.gq', 'https://api.search-news.gq', 'https://Julia-ivv.github.io/search-news-frontend'];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 mongoose.connect(NODE_ENV === 'production' ? MONGO_DB : 'mongodb://localhost:27017/newsdb', {
