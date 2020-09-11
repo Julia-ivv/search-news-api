@@ -15,7 +15,7 @@ const { NODE_ENV, MONGO_DB, PORT = 3000 } = process.env;
 
 const app = express();
 
-const whitelist = ['http://localhost:8080', 'http://api.search-news.gq', 'https://api.search-news.gq', 'https://Julia-ivv.github.io/search-news-frontend'];
+const whitelist = ['http://localhost:8080', 'http://api.search-news.gq', 'https://api.search-news.gq', 'https://www.api.search-news.gq', 'http://www.api.search-news.gq', 'https://julia-ivv.github.io'];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin) {
